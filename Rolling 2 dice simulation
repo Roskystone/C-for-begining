@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+int seed;
+int rolls[11] = {0};
+int roll;
+srand(0);
+for(int i = 0; i < 1000; i++)
+{
+roll = rand() % 11 + 2;
+rolls[roll - 2]++;
+}
+cout << "Rolls with approach 1:" << endl;
+for(int i = 0; i < 11; i++)
+{
+cout << i + 2 << " rolls: " << rolls[i] << endl;
+}
+cout << endl;
+int roll2;
+int rolls2[11] = {0};
+for(int i = 0; i < 1000; i++)
+{
+roll = rand() % 6 + 1;
+roll2 = rand() % 6 + 1;
+rolls2[roll + roll2 - 2]++;
+}
+cout << "Rolls with approach 2:" << endl;
+for(int i = 0; i < 11; i++)
+{
+cout << i + 2 << " rolls: " << rolls2[i] << endl;
+}
+return 0;
+}
